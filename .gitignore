@@ -3,3 +3,4 @@
 .shake
 
 firebase-debug.log
+.firebase/
