@@ -2,14 +2,37 @@
 <html lang="en"> 
 <head profile="http://www.w3.org/2005/10/profile">
     <meta charset="UTF-8">
-    <meta name="description" content="My Slick Site">
-    <meta name="author" content="Me">
+    <meta name="description" content="Olivia Weston, academic soup">
+    <meta name="author" content="Olivia Weston">
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>My Slick Site</title>
+    <title>Olivia Weston, academic soup</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyA0ZbI58_GlAFpVs91bivA1tJkAjzyP8XU",
+          authDomain: "academic-soup.firebaseapp.com",
+          projectId: "academic-soup",
+          storageBucket: "academic-soup.appspot.com",
+          messagingSenderId: "883119798482",
+          appId: "1:883119798482:web:1033d8d0ecd79f75cdd50b",
+          measurementId: "G-Y3045T8PS8"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
     <header>
         <nav>
             <a id="beacon" href="/">
@@ -18,11 +41,11 @@
         </nav>
     
         <div class="right-sidebar">
-            <a class="ext-link" href="https://github.com/myslickgithubuser">
+            <a class="ext-link" href="https://github.com/Surobaki">
             <img src="/images/github-logo.png" alt="Github Profile"/>
         </a>
 
-            <a class="ext-link" href="https://twitter.com/myslickhandle">
+            <a class="ext-link" href="https://twitter.com/suro_baki">
             <img src="/images/twitter-logo.png" alt="Twitter Profile"/>
         </a>
     <div id="theme-button">DAY</div>
