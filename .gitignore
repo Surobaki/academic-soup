@@ -4,7 +4,7 @@
 
 # Firebase files
 firebase-debug.log
-.firebase/
+.firebase
 
 # Public files
 docs
