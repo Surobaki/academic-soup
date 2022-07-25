@@ -1,83 +1,63 @@
 <!DOCTYPE html>
-<html lang="en"> 
-<head profile="http://www.w3.org/2005/10/profile">
-    <meta charset="UTF-8">
-    <meta name="description" content="Olivia Weston, academic soup">
-    <meta name="author" content="Olivia Weston">
-    <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>Olivia Weston, academic soup</title>
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" href="/css/style.css">
+<html>
+
+<head>
+  <title>Academic Soup</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <!-- DEBUG -->
+  <script type="text/javascript" src="http://livejs.com/live.js"></script>
 </head>
+
 <body>
-    
-<!-- Firebase SDK -->
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } 
-        from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
-    import { getAnalytics } 
-        from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
-    
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-        apiKey: "AIzaSyA0ZbI58_GlAFpVs91bivA1tJkAjzyP8XU",
-        authDomain: "academic-soup.firebaseapp.com",
-        projectId: "academic-soup",
-        storageBucket: "academic-soup.appspot.com",
-        messagingSenderId: "883119798482",
-        appId: "1:883119798482:web:1033d8d0ecd79f75cdd50b",
-        measurementId: "G-Y3045T8PS8"
-    };
-    
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-</script>
+  <div id="content-svg-wrapper">
+    <div>
+      <div id="top-bar">
+        <h1>
+          Academic Soup
+        </h1>
+      </div>
 
+      <div id="body-content" class="paper">
+        <div id="links-box">
+          <ul>
+            <li>Twitter</li>
+            <li>Github</li>
+            <li>PGP</li>
+          </ul>
+        </div>
 
-<header>
-    <nav>
-        <a id="beacon" href="/">
-            <div id="home-text"> HOME </div>
-        </a>
-    </nav>
+        <div id="picture-box">
+          <figure id="personal-photo">
+            <img src="https://pbs.twimg.com/media/FWUmkj3WQAMQjmT?format=webp&name=large" width="320" height="400"
+              alt="A zonked out cat with a dry pipe">
+            <figcaption>
+              <i>Figure 1.</i> <br>Olivia observed in her natural habitat while sleeping.
+            </figcaption>
+          </figure>
+        </div>
 
-    <div class="right-sidebar">
-        <a class="ext-link" href="https://github.com/Surobaki">
-            <img src="/images/github-logo.png" alt="Github Profile"/>
-        </a>
-
-        <a class="ext-link" href="https://twitter.com/suro_baki">
-            <img src="/images/twitter-logo.png" alt="Twitter Profile"/>
-        </a>
-        <div id="theme-button">DAY</div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus eu eros nec hendrerit. Suspendisse
+          semper tempus nunc, eu dignissim lorem volutpat ac. Sed finibus, ex id sagittis lobortis, risus libero
+          sagittis
+          augue, sed luctus mauris erat nec lorem. Orci varius natoque penatibus et magnis dis parturient montes,
+          nascetur
+          ridiculus mus. Nulla sagittis justo id mi fringilla volutpat ullamcorper sed ante. Aliquam varius, sem sit
+          amet
+          sollicitudin ullamcorper, felis justo congue turpis, quis sagittis turpis justo non dolor. Integer dapibus
+          odio
+          eu enim iaculis, a dapibus odio molestie. Aliquam dapibus mi luctus laoreet vulputate. Nulla sed eleifend
+          lorem.
+          Nam sed lorem tempor, pharetra metus non, lacinia nulla. Morbi nec risus vitae lorem ultrices vehicula.
+        </p>
+      </div>
     </div>
-</header>
-
-<main id="page">
-            <section class="table-of-contents">
-                <h1>All Posts</h1>
-                <div class="metadata">
-                </div>
-                <ul>
-                        <li>
-            <a href="posts/sample-post.html">Sample Post <span class="date">Jan 1, 2019</span> </a>
-        </li>
-</ul>
-        </section>
-</main>
-
-<footer>
-    Lorem ipsum footer!
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt enim laoreet ornare pellentesque. Proin ut est quam. Quisque eleifend ullamcorper dolor ac semper. Aliquam facilisis, metus non interdum blandit, turpis eros imperdiet odio, ac egestas elit urna a ante. Ut nunc massa, tempor a justo et, mollis ultricies velit. Nunc vel sapien lobortis, laoreet nisi at, eleifend mauris. Donec arcu dui, commodo eget purus eget, scelerisque facilisis dui. Cras mauris urna, dictum nec rutrum at, convallis nec leo. Curabitur tristique urna vel urna tempus tempus. Integer maximus nisl a velit auctor, dapibus tincidunt mi pulvinar.
-    </p>
-</footer>
-
-<link href='https://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<script src="/js/main.js"></script>
+    <svg id="bookmarks" fill="none" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+      <polygon fill="currentColor" id="bookmark-3" points="42,50 95,50 0,200" class="triangle paper" />
+      <polygon fill="currentColor" id="bookmark-2" points="25,25 75,25 0,200" class="triangle paper" />
+      <polygon fill="currentColor" id="bookmark-1" points="0,0 50,0 0,200" class="triangle paper" />
+    </svg>
+  </div>
 </body>
+
 </html>
