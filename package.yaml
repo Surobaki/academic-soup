@@ -1,19 +1,19 @@
-name:                slick-template
+name:                academic-soup
 version:             0.1.0.0
-github:              "Me/my-site"
+github:              "Surobaki/academic-soup"
 license:             BSD3
-author:              "Me"
-maintainer:          "example@example.com"
-copyright:           "20XX Me"
+author:              "Olivia Hartley Weston"
+maintainer:          "o.weston@pm.me"
+copyright:           "2022 Olivia Hartley Weston"
 
 extra-source-files:
 - README.md
 - ChangeLog.md
 
-synopsis:            My site built with slick!
+synopsis:            My personal website built using Slick.
 category:            Slick-Site
 
-description: My slick Site
+description: Quite static multi-page website built on top of the Slick static site generator and deployed on Firebase.
 
 executables:
   build-site:
