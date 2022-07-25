@@ -63,7 +63,7 @@ body {
 }
 
 .paper {
-    background-image: url("./paper_texture.png");
+    background-image: url("../images/paper_texture.png");
 }
 
 #content-svg-wrapper {
