@@ -37,6 +37,7 @@ body {
     z-index: 1000;
     position: relative;
     justify-content: space-between;
+    width: 90%;
 }
   
 #personal-photo {
@@ -48,6 +49,11 @@ body {
     caption-side: bottom;
     text-align: center;
 }
+
+#top-bar-flex {
+    width: 100%;
+    display: flex;
+}
   
 #top-bar {
     text-align: center;
@@ -55,6 +61,17 @@ body {
     position: sticky;
     top: 0;
     z-index: 0;
+    width: 90%;
+}
+
+#top-bar-padder {
+    width: 10%;
+}
+
+#content-flex {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
 }
 
 #links-box {
@@ -66,8 +83,16 @@ body {
     background-image: url("../images/paper_texture.png");
 }
 
-#content-svg-wrapper {
+#main-wrapper {
     display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#bookmarks {
+    width: 10%;
+    position: relative;
+    top: 50px;
 }
 
 #bookmark-1 {
