@@ -184,3 +184,7 @@ h1 {
     background: var(--secondary);
     background-blend-mode: normal;
 }
+
+#footer-text {
+    color: var(--light-1-tx);
+}
