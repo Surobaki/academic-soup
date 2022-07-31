@@ -168,3 +168,8 @@ h1 {
 #footer-text {
     color: var(--light-1-tx);
 }
+
+figcaption {
+    font-family: "Ibarra Real Nova", serif;
+    font-size: 18px;
+}
