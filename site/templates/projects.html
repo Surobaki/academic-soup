@@ -1,48 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-  <title>Academic Soup</title>
-  <link href="/css/style.css" rel="stylesheet" type="text/css" />
-  <!-- DEBUG -->
-  <script type="text/javascript" src="http://livejs.com/live.js"></script>
-</head>
+{{>site/templates/head-metas.html}}
 
 <body>
   <div id="main-wrapper">
-    <div id="top-bar-flex">
-      <div id="top-bar">
-        <a href="/" class="invisilink">
-          <h1>
-            Academic Soup
-          </h1>
-        </a>
-      </div>
-      <div id="top-bar-padder">
-        <!-- Probably don't put content here... -->
-      </div>
-    </div>
+    {{>site/templates/header.html}}
     <div id="content-flex">
-      <div id="body-content" class="paper">
+      <div id="body-content">
 
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut eaque, molestiae recusandae facere blanditiis ipsa accusantium saepe assumenda asperiores omnis neque non ex odio vitae iste quaerat ipsam consequuntur iusto.
+        </p>
       </div>
-      <svg id="bookmarks" fill="none" viewBox="0 0 120 400" xmlns="http://www.w3.org/2000/svg">
-        <a href="/projects.html">
-          <text x="0" y="95" fill="currentColor" class="cross-link" id="projects-link">Projects</text>
-        </a>
-        <a href="/blog.html">
-          <text x="50" y="120" fill="currentColor" class="cross-link" id="blog-link">Blog</text>
-        </a>
-        <a href="/cv.html">
-          <text x="75" y="145" fill="currentColor" class="cross-link" id="cv-link">CV</text>
-        </a>
-        <polygon fill="currentColor" id="bookmark-3" points="42,150 95,150 0,300" class="triangle paper" />
-        <polygon fill="currentColor" id="bookmark-2" points="25,125 75,125 0,300" class="triangle paper" />
-        <polygon fill="currentColor" id="bookmark-1" points="0,100 50,100 0,300" class="triangle paper" />
-      </svg>
+      {{>site/templates/intralinks.html}}
     </div>
 
   </div>
+  {{>site/templates/footer.html}}
 </body>
 
 </html>
