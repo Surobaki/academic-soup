@@ -79,9 +79,11 @@ body {
     align-items: center;
 }
 
+/*
 .paper {
     background-image: url("../images/paper_texture.png");
 }
+*/
 
 #main-wrapper {
     display: flex;
@@ -105,4 +107,8 @@ body {
 
 #bookmark-3 {
     color: var(--dark-2-bg);
+}
+
+.cross-link {
+    font: 16px sans-serif;
 }
