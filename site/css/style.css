@@ -4,26 +4,18 @@ Colour palette generated and produced from:
 https://coolors.co/49495a-49aba8-d4cce0-eddfef-e8fab3
 */
 :root {
-    --primary-bg: #49ABA8;
-    --light-1-bg: #62BCB9;
-    --light-2-bg: #7EC8C5;
-    --dark-1-bg: #3D8F8C;
-    --dark-2-bg: #317270;
-  
-    --primary-tx: #464655;
-    --light-1-tx: #5C5C70;
-    --dark-1-tx: #373743;
-  
-    --accent: #E8FAB3;
-    --light-1-acc: #F4FDD9;
-    --dark-1-acc: #DDF98B;
-  
-    --secondary: #D4CCE0;
-    --tertiary: #EDDFEF;
+    --background-1: #FAEEE7;
+    --button-1: #FF8BA7;
+    --headline-1: #33272A;
+    --button-text-1: #33272A;
+    --paragraph-1: #594A4E;
+
+    --background-2: #FFFFFE;
+    --background-2-dark: #FAEEE7;
   }
 
 body {
-    background-color: var(--primary-bg);
+    background-color: var(--background);
     padding: 5%;
     padding-top: 0;
     margin: 0;
@@ -31,7 +23,7 @@ body {
 }
   
 #body-content {
-    background-color: var(--light-2-bg);
+    background-color: var(--background-2);
     padding: 25px;
     display: flex;
     flex-wrap: wrap;
@@ -81,38 +73,26 @@ body {
     flex-wrap: wrap;
 }
 
-/*
-.paper {
-    background-image: url("../images/paper_texture.png");
-}
-*/
-
 #main-wrapper {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
 }
 
-#bookmarks {
+#intralinks {
     width: 10%;
     position: relative;
     top: 50px;
-}
-
-#bookmark-1 {
-    color: var(--light-1-bg);
-}
-
-#bookmark-2 {
-    color: var(--dark-1-bg);
-}
-
-#bookmark-3 {
-    color: var(--dark-2-bg);
+    display: flex;
+    flex-direction: column;
 }
 
 .cross-link {
-    font: 16px sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font: 16px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 #flex-footer {
