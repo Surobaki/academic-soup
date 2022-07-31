@@ -30,6 +30,7 @@ siteMeta =
              , siteTitle = "Olivia Weston, academic soup"
              , twitterHandle = Just "suro_baki"
              , githubUser = Just "Surobaki"
+             , email = Just "o.weston@pm.me"
              }
 
 outputFolder :: FilePath
@@ -49,6 +50,7 @@ data SiteMeta =
              , siteTitle     :: String
              , twitterHandle :: Maybe String -- Without @
              , githubUser    :: Maybe String
+             , email         :: Maybe String
              }
     deriving (Generic, Eq, Ord, Show, ToJSON)
 

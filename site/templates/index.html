@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>site/templates/head-metas.html}}
+
+<body>
+  <div id="main-wrapper">
+    {{>site/templates/header.html}}
+    <div id="content-flex">
+      <div id="body-content" class="paper">
+        <div id="links-box">
+          <ul>
+            <a href="https://twitter.com/{{twitterHandle}}">
+            <li>Twitter</li> 
+            </a>
+            <a href="https://github.com/{{githubUser}}">
+<li>Github</li>
+            </a>
+            <a href="/pgp.asc">
+            <li>PGP</li>
+            </a>
+            <a href="mailto:{{email}}">
+            <li>Email</li>
+            </a>
+          </ul>
+        </div>
+
+        <div id="picture-box">
+          <figure id="personal-photo">
+            <img src="https://pbs.twimg.com/media/FWUmkj3WQAMQjmT?format=webp&name=large" width="320" height="400"
+              alt="A zonked out cat with a dry pipe">
+            <figcaption>
+              <i>Figure 1.</i> <br>Olivia observed in her natural habitat while sleeping.
+            </figcaption>
+          </figure>
+        </div>
+
+        <p>
+          Hi, I'm Olivia. I'm currently studying at Swansea University while trying to gain a footing in both the industrial and academic environments. I'm a research-oriented person with broad interests in computer science and mathematics, as well as having a general love of knowledge. You can find my projects <a href="/projects.html">here</a>.
+        </p>
+      </div>
+      {{>site/templates/bookmarks.html}}
+    </div>
+
+  </div>
+  {{>site/templates/footer.html}}
+</body>
+
+</html>
