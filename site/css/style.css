@@ -99,10 +99,15 @@ body {
 
 .cross-link {
     font-family: "Montserrat", sans-serif;
-    font: 16px;
     font-weight: 400;
     margin-top: 15px;
     margin-bottom: 15px;
+    background-color: var(--button-1);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #flex-footer {
