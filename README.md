@@ -26,3 +26,4 @@ I'm going through a phase of interest and hyperfixation on [Haskell](https://www
 # Sourcing
 The images for Twitter, Github and LinkedIn are downloaded from the respective brand guidelines.  
 My PGP icon is taken from [ModernPGP/icons](https://github.com/ModernPGP/icons) ([/keys/icon-key.svg](https://github.com/ModernPGP/icons/blob/master/keys/icon-key.svg)).
+My ProtonMail icon is taken from [Simple Icons](https://simpleicons.org/).
