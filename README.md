@@ -1,6 +1,3 @@
-# Update: project archival
-Hi, I've decided to archive this project for now and get to making a more professional and simple website. I would like to come to this once I have more free time.
-
 # Academic Soup
 Academic Soup is the name of my personal website. It's built from a template using [Slick](https://github.com/ChrisPenner/slick). It's deployed on [Firebase](https://firebase.google.com/). I'm trying to stick to my personal coding and design philosophies to showcase the way I like things most:
 * minimal large frameworks for small projects,
