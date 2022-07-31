@@ -107,10 +107,6 @@ body {
     justify-content: space-between;
 }
 
-#footer-text {
-    font: 10px sans-serif;
-}
-
 .ratio-flex {
     display: flex;
 }
@@ -149,24 +145,17 @@ a {
 }
 
 a:link {
-    color: var(--accent);
+    color: var(--button-text-1);
+    font-weight: bold;
 }
 
 a:visited {
-    color: var(--dark-1-acc);
+    color: var(--button-text-1);
+    font-weight: lighter;
 }
 
 h1 {
     font-weight: 600;
-}
-
-.emphasis-link {
-    background: var(--secondary);
-    background-blend-mode: normal;
-}
-
-#footer-text {
-    color: var(--light-1-tx);
 }
 
 figcaption {
