@@ -9,30 +9,35 @@
     <div id="content-flex">
       <div id="body-content" class="paper">
         <div id="links-box">
-          <ul>
+          <ul id="links-list">
             <a href="https://twitter.com/{{twitterHandle}}">
-              <li class="ext-link">
-                <img src="/images/twitter.svg" alt="Twitter logo">
+              <li class="ext-link index-link">
+                <img src="/images/twitter.svg" alt="Twitter logo" height=64>
+                <span>@Suro_baki</span>
               </li>
             </a>
             <a href="https://github.com/{{githubUser}}">
-              <li class="ext-link">
-                <img src="/images/github.svg" alt="Github logo">
+              <li class="ext-link index-link">
+                <img src="/images/github.svg" alt="Github logo" height=64>
+                <span>Surobaki</span>
               </li>
             </a>
             <a href="https://www.linkedin.com/in/{{linkedinUser}}">
-              <li class="ext-link">
-                <img src="/images/linkedin.png" alt="LinkedIn logo">
+              <li class="ext-link index-link">
+                <img src="/images/linkedin.png" alt="LinkedIn logo" height=64>
+                <span>Olivia</span>
               </li>
             </a>
             <a href="/pgp.asc">
-              <li class="ext-link">
-                <img src="/images/pgp.svg" alt="Key icon">
+              <li class="ext-link index-link">
+                <img src="/images/pgp.svg" alt="Key icon" height=64>
+                <span>PGP</span>
               </li>
             </a>
             <a href="mailto:{{email}}">
-              <li class="ext-link">
-                <img src="/images/protonmail.svg" alt="ProtonMail icon">
+              <li class="ext-link index-link">
+                <img src="/images/protonmail.svg" alt="ProtonMail icon" height=64>
+                <span>o.weston</span>
               </li>
             </a>
           </ul>
@@ -49,10 +54,12 @@
         </div>
 
         <p>
-          Hi, I'm Olivia. I'm currently studying at Swansea University while trying to gain a footing in both the
+          Hi, I'm Olivia. I'm currently studying at <a href="https://www.swansea.ac.uk/" class="emphasis-link">Swansea University</a> while trying to gain a footing in both the
           industrial and academic environments. I'm a research-oriented person with broad interests in computer science
-          and mathematics, as well as having a general love of knowledge. You can find my projects <a
-            href="/projects.html">here</a>.
+          and mathematics, as well as having a general love of knowledge. You can find <a href="/projects.html">my projects here</a>.
+        </p>
+        <p>
+          Outside of my academic interests, I'm interested in cooking, philosophy, traditional and liberal arts as well as lots of creative DIY projects.
         </p>
       </div>
       {{>site/templates/bookmarks.html}}
