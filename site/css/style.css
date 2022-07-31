@@ -22,7 +22,6 @@ https://coolors.co/49495a-49aba8-d4cce0-eddfef-e8fab3
     --tertiary: #EDDFEF;
   }
 
-  
 body {
     background-color: var(--primary-bg);
     padding: 5%;
@@ -79,6 +78,7 @@ body {
 #links-box {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 /*
@@ -145,4 +145,42 @@ body {
 
 .ext-link {
     list-style: none;
+    margin: 15px;
+}
+
+.index-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#links-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 300px;
+    flex-direction: row;
+    max-width: 300px;
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:link {
+    color: var(--accent);
+}
+
+a:visited {
+    color: var(--dark-1-acc);
+}
+
+h1 {
+    font-weight: 600;
+}
+
+.emphasis-link {
+    background: var(--secondary);
+    background-blend-mode: normal;
 }
