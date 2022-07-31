@@ -15,7 +15,7 @@ https://coolors.co/49495a-49aba8-d4cce0-eddfef-e8fab3
   }
 
 body {
-    background-color: var(--background);
+    background-color: var(--background-1);
     padding: 5%;
     padding-top: 0;
     margin: 0;
@@ -31,6 +31,7 @@ body {
     position: relative;
     justify-content: space-between;
     width: 90%;
+    border-radius: 20px;
 }
   
 #personal-photo {
@@ -41,6 +42,13 @@ body {
     display: table-caption;
     caption-side: bottom;
     text-align: center;
+}
+
+#personal-photo img {
+    border-radius: 5px;
+    border-style: double;
+    border-color: var(--paragraph-1);
+    border-width: 7px;
 }
 
 #top-bar-flex {
@@ -65,6 +73,8 @@ body {
     display: flex;
     width: 100%;
     align-items: flex-start;
+    background-color: var(--background-2);
+    border-radius: 20px;
 }
 
 #links-box {
