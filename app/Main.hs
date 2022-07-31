@@ -30,7 +30,7 @@ siteMeta =
              , siteTitle = "Olivia Weston, academic soup"
              , twitterHandle = Just "suro_baki"
              , githubUser = Just "Surobaki"
-             , email = Just "o.weston@pm.me"
+             , email = Just "o.weston+acsoup@pm.me"
              , linkedinUser = Just "olivia-h-weston"
              }
 
