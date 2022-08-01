@@ -29,6 +29,8 @@ After the frontend index was done, the typical, static frontend development mode
 
 Once the build rules were finished I got back into developing the static frontend with the [Mustache](https://mustache.github.io/) template engine used by Slick.
 
+The website has not really been designed mobile-first, however, after finishing all the 'basic' things I would like to try and make the website be designed more responsively.
+
 ### Sources
 The cute and lovely soup picture was taken by [@ellaolsson](https://unsplash.com/@ellaolsson), I just retrieved it from [Unsplash](https://unsplash.com/photos/fxJTl_gDh28).
 
