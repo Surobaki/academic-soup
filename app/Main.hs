@@ -164,14 +164,14 @@ toIsoDate :: UTCTime -> String
 toIsoDate = formatTime defaultTimeLocale (iso8601DateFormat rfc3339)
 
 buildFeed :: [Post] -> Action ()
-buildFeed posts = do
+buildFeed posts' = do
   now <- liftIO getCurrentTime
   let atomData =
         AtomData
           { title = siteTitle siteMeta
           , domain = baseUrl siteMeta
           , author = siteAuthor siteMeta
-          , posts = mkAtomPost <$> posts
+          , posts = mkAtomPost <$> posts'
           , currentTime = toIsoDate now
           , atomUrl = "/atom.xml"
           }
