@@ -1,4 +1,4 @@
-{-# LANGUAGE NamedFieldPuns        #-}
+-- {-# LANGUAGE NamedFieldPuns        #-}
 {-# LANGUAGE DeriveGeneric         #-}
 {-# LANGUAGE DeriveAnyClass        #-}
 {-# LANGUAGE OverloadedStrings     #-}
