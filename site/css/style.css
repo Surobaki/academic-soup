@@ -229,3 +229,7 @@ figcaption {
 .project-img {
     box-shadow: var(--button-text-1) 5px 5px;
 }
+
+.project-description, .date-span {
+    font-weight: 400;
+}

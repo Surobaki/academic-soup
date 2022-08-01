@@ -6,7 +6,7 @@ projectDate: "August 1st 2022"
 image: "/images/academic-soup/soup.jpg"
 description: "Post detailing my work on the website you're currently browsing."
 tags: [computer-science, web-dev, design]
-altText: ""
+altText: "A top down picture of a butternut squash soup with a small splash of cream"
 ---
 
 ## Summary
