@@ -93,6 +93,7 @@ data Project =
             , tags        :: [Tag]
             , description :: String
             , image       :: Maybe String
+            , altText     :: Maybe String
         }
     deriving (Generic, Eq, Ord, Show, FromJSON, ToJSON, Binary)
 
@@ -162,7 +163,7 @@ buildProject srcPath = cacheAction ("build" :: T.Text, srcPath) $ do
       withProjUrl = _Object . at "url" ?~ String projUrl
   -- Add additional metadata we've been able to compute
   let fullProjData = withSiteMeta . withProjUrl $ projData
-  template <- compileTemplate' "site/templates/project.html"
+  template <- compileTemplate' "site/templates/projects.html"
   writeFile' (outputFolder </> T.unpack projUrl) . T.unpack $ substitute template fullProjData
   convert fullProjData
 

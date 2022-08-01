@@ -8,10 +8,25 @@
     {{>site/templates/header.html}}
     <div id="content-flex">
       <div id="body-content">
-
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut eaque, molestiae recusandae facere blanditiis ipsa accusantium saepe assumenda asperiores omnis neque non ex odio vitae iste quaerat ipsam consequuntur iusto.
-        </p>
+        <h2 id="projects-heading">Interesting projects</h2>
+        <div id="project-box">
+          {{#projects}}
+            <a href="{{url}}" class="project-item">
+              <div>
+                <img src="{{image}}" alt="{{altText}}">
+                <p class="project-description">
+                  {{description}}
+                </p>
+                <span class="date-span">{{projectDate}}</span>
+                <div class="tag-list">
+                  {{#tags}}
+                  <span class="tag-span">{{.}}</span>
+                  {{/tags}}
+                </div>
+              </div>
+            </a>
+          {{/projects}}
+        </div>
       </div>
       {{>site/templates/intralinks.html}}
     </div>
