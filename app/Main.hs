@@ -115,8 +115,8 @@ buildIndex posts' = do
   writeFile' (outputFolder </> "index.html") indexHTML
 
 -- | given a list of projects this will build a table of contents
-buildProjects :: [Project] -> Action ()
-buildProjects projects' = do
+buildProjectIndex :: [Project] -> Action ()
+buildProjectIndex projects' = do
   projectsT <- compileTemplate' "site/templates/projects.html"
   let projectsInfo = ProjectsInfo {projects = projects'}
       projectsHTML = T.unpack $ substitute projectsT (withSiteMeta $ toJSON projectsInfo)
@@ -127,6 +127,12 @@ buildPosts :: Action [Post]
 buildPosts = do
   pPaths <- getDirectoryFiles "." ["site/posts//*.md"]
   forP pPaths buildPost
+
+-- | Find and build all projects
+buildProjects :: Action [Project]
+buildProjects = do
+  pPaths <- getDirectoryFiles "." ["site/projects//*.md"]
+  forP pPaths buildProject
 
 -- | Load a post, process metadata, write it to output, then return the post object
 -- Detects changes to either post content or template
@@ -143,6 +149,22 @@ buildPost srcPath = cacheAction ("build" :: T.Text, srcPath) $ do
   template <- compileTemplate' "site/templates/post.html"
   writeFile' (outputFolder </> T.unpack postUrl) . T.unpack $ substitute template fullPostData
   convert fullPostData
+
+-- | Load a project, process metadata, write it to output, then return the 
+-- project object. Detects changes to either project content or template.
+buildProject :: FilePath -> Action Project
+buildProject srcPath = cacheAction ("build" :: T.Text, srcPath) $ do 
+  liftIO . putStrLn $ "Rebuilding project: " <> srcPath
+  projContent <- readFile' srcPath
+  -- load post content and metadata as JSON blob
+  projData <- markdownToHTML . T.pack $ projContent
+  let projUrl = T.pack . dropDirectory1 $ srcPath -<.> "html"
+      withProjUrl = _Object . at "url" ?~ String projUrl
+  -- Add additional metadata we've been able to compute
+  let fullProjData = withSiteMeta . withProjUrl $ projData
+  template <- compileTemplate' "site/templates/project.html"
+  writeFile' (outputFolder </> T.unpack projUrl) . T.unpack $ substitute template fullProjData
+  convert fullProjData
 
 -- | Copy all static files from the listed folders to their destination
 copyStaticFiles :: Action ()
