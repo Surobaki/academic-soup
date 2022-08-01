@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>site/templates/head-metas.html}}
+
+<body>
+  <div id="main-wrapper">
+    {{>site/templates/header.html}}
+    <div id="content-flex">
+      <div id="body-content">
+        <h2 id="projects-heading">{{title}}</h2>
+        <article class="article-wrapper">
+          <img src="{{image}}" alt="{{altText}}" class="project-img">
+          <div class="article-meta">
+            Author: <span>{{author}}</span>
+            <br>
+            Date: <span>{{projectDate}}</span>
+            <br>
+            Tags: 
+            {{#tags}}
+            <span class="tag-span">{{.}}</span>
+            {{/tags}}
+          </div>
+          <div class="article-content">
+            {{{content}}}
+          </div>
+
+        </article>
+      </div>
+      {{>site/templates/intralinks.html}}
+    </div>
+  </div>
+  {{>site/templates/footer.html}}
+</body>
+
+</html>
