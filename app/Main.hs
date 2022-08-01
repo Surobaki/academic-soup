@@ -163,7 +163,7 @@ buildProject srcPath = cacheAction ("build" :: T.Text, srcPath) $ do
       withProjUrl = _Object . at "url" ?~ String projUrl
   -- Add additional metadata we've been able to compute
   let fullProjData = withSiteMeta . withProjUrl $ projData
-  template <- compileTemplate' "site/templates/projects.html"
+  template <- compileTemplate' "site/templates/project-boiler.html"
   writeFile' (outputFolder </> T.unpack projUrl) . T.unpack $ substitute template fullProjData
   convert fullProjData
 
