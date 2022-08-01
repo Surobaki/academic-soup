@@ -208,7 +208,9 @@ buildFeed posts' = do
 buildRules :: Action ()
 buildRules = do
   allPosts <- buildPosts
+  allProjects <- buildProjects
   buildIndex allPosts
+  buildProjectIndex allProjects
   buildFeed allPosts
   copyStaticFiles
 
