@@ -57,9 +57,15 @@ data SiteMeta =
     deriving (Generic, Eq, Ord, Show, ToJSON)
 
 -- | Data for the index page
-data IndexInfo =
+newtype IndexInfo =
   IndexInfo
     { posts :: [Post]
+    } deriving (Generic, Show, FromJSON, ToJSON)
+
+-- | Data for the projects page
+newtype ProjectsInfo =
+  ProjectsInfo
+    { projects :: [Project]
     } deriving (Generic, Show, FromJSON, ToJSON)
 
 type Tag = String
@@ -70,11 +76,24 @@ data Post =
          , author      :: String
          , content     :: String
          , url         :: String
-         , date        :: String
+         , postDate    :: String
          , tags        :: [Tag]
          , description :: String
          , image       :: Maybe String
-         }
+        }
+    deriving (Generic, Eq, Ord, Show, FromJSON, ToJSON, Binary)
+
+-- | Data for a project post
+data Project =
+    Project { title       :: String
+            , author      :: String
+            , content     :: String
+            , url         :: String
+            , projectDate :: String
+            , tags        :: [Tag]
+            , description :: String
+            , image       :: Maybe String
+        }
     deriving (Generic, Eq, Ord, Show, FromJSON, ToJSON, Binary)
 
 data AtomData =
@@ -83,7 +102,9 @@ data AtomData =
            , author       :: String
            , posts        :: [Post]
            , currentTime  :: String
-           , atomUrl      :: String } deriving (Generic, ToJSON, Eq, Ord, Show)
+           , atomUrl      :: String 
+        } 
+    deriving (Generic, ToJSON, Eq, Ord, Show)
 
 -- | given a list of posts this will build a table of contents
 buildIndex :: [Post] -> Action ()
@@ -92,6 +113,14 @@ buildIndex posts' = do
   let indexInfo = IndexInfo {posts = posts'}
       indexHTML = T.unpack $ substitute indexT (withSiteMeta $ toJSON indexInfo)
   writeFile' (outputFolder </> "index.html") indexHTML
+
+-- | given a list of projects this will build a table of contents
+buildProjects :: [Project] -> Action ()
+buildProjects projects' = do
+  projectsT <- compileTemplate' "site/templates/projects.html"
+  let projectsInfo = ProjectsInfo {projects = projects'}
+      projectsHTML = T.unpack $ substitute projectsT (withSiteMeta $ toJSON projectsInfo)
+  writeFile' (outputFolder </> "projects.html") projectsHTML
 
 -- | Find and build all posts
 buildPosts :: Action [Post]
@@ -150,7 +179,7 @@ buildFeed posts = do
   writeFile' (outputFolder </> "atom.xml") . T.unpack $ substitute atomTempl (toJSON atomData)
     where
       mkAtomPost :: Post -> Post
-      mkAtomPost p = p { date = formatDate $ date p }
+      mkAtomPost p = p { postDate = formatDate $ postDate p }
 
 -- | Specific build rules for the Shake system
 --   defines workflow to build the website
