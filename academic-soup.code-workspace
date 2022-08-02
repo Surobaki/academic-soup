@@ -9,7 +9,11 @@
 	},
 	"extensions": {
 		"recommendations": [
-			"haskell.haskell"
+			"haskell.haskell",
+			"dawhite.mustache",
+			"jock.svg",
+			"redhat.vscode-xml",
+			"redhat.vscode-yaml"
 		]
 	}
 }
