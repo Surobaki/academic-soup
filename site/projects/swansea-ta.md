@@ -18,6 +18,8 @@ As a sole teaching assistant it was my responsibility to host weekly office hour
 
 Both precompiled PDFs and Pandoc-friendly Markdown files (written in [Typora](https://typora.io/)) can be found on [my online drive](https://drive.proton.me/urls/TRCVC5Y4F4#9o3GP55NVA8A). The password for the folder is `academic-soup`. Feel free to contact me if something is wrong with the repository.
 
+While writing this document I also realised I'd like to thank my BSc project supervisor and head lecturer of the CS-275 module, [Dr. Arno Pauly](https://orcid.org/0000-0002-0173-3295). I think he's an inspiration for anyone interested in an academic career.
+
 ## Differences in European and American TCS
 From both my experience and comparing various research, North America has a difference stance to theoretical computer science than that of the UK and as a whole, Europe. North America typically focuses more on complexity theory and more practical applicability of theoretical concepts integrated into software engineering practices, while Europe focuses on computability theory and blends computer science more with abstract mathematics.
 
