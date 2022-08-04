@@ -62,12 +62,6 @@ newtype IndexInfo =
     { posts :: [Post]
     } deriving (Generic, Show, FromJSON, ToJSON)
 
--- | Data for the projects page
-newtype ProjectsInfo =
-  ProjectsInfo
-    { projects :: [Project]
-    } deriving (Generic, Show, FromJSON, ToJSON)
-
 type Tag = String
 
 -- | Data for a blog post
@@ -76,24 +70,11 @@ data Post =
          , author      :: String
          , content     :: String
          , url         :: String
-         , postDate    :: String
+         , date        :: String
          , tags        :: [Tag]
          , description :: String
          , image       :: Maybe String
-        }
-    deriving (Generic, Eq, Ord, Show, FromJSON, ToJSON, Binary)
-
--- | Data for a project post
-data Project =
-    Project { title       :: String
-            , author      :: String
-            , content     :: String
-            , url         :: String
-            , projectDate :: String
-            , tags        :: [Tag]
-            , description :: String
-            , image       :: Maybe String
-            , altText     :: Maybe String
+         , altText     :: Maybe String
         }
     deriving (Generic, Eq, Ord, Show, FromJSON, ToJSON, Binary)
 
@@ -107,21 +88,26 @@ data AtomData =
         } 
     deriving (Generic, ToJSON, Eq, Ord, Show)
 
--- | given a list of posts this will build a table of contents
-buildIndex :: [Post] -> Action ()
-buildIndex posts' = do
+-- | Builds index.html with siteMeta included
+buildIndex :: Action ()
+buildIndex = do
   indexT <- compileTemplate' "site/templates/index.html"
-  let indexInfo = IndexInfo {posts = posts'}
-      indexHTML = T.unpack $ substitute indexT (withSiteMeta $ toJSON indexInfo)
+  let indexHTML = T.unpack $ substitute indexT (toJSON siteMeta)
   writeFile' (outputFolder </> "index.html") indexHTML
 
--- | given a list of projects this will build a table of contents
-buildProjectIndex :: [Project] -> Action ()
+buildProjectIndex :: [Post] -> Action ()
 buildProjectIndex projects' = do
-  projectsT <- compileTemplate' "site/templates/projects.html"
-  let projectsInfo = ProjectsInfo {projects = projects'}
-      projectsHTML = T.unpack $ substitute projectsT (withSiteMeta $ toJSON projectsInfo)
-  writeFile' (outputFolder </> "projects.html") projectsHTML
+  indexT <- compileTemplate' "site/templates/projects.html"
+  let indexInfo = IndexInfo {posts = projects'}
+      indexHTML = T.unpack $ substitute indexT (withSiteMeta $ toJSON indexInfo)
+  writeFile' (outputFolder </> "projects.html") indexHTML
+
+buildPostsIndex :: [Post] -> Action ()
+buildPostsIndex posts' = do
+  indexT <- compileTemplate' "site/templates/blog.html"
+  let indexInfo = IndexInfo {posts = posts'}
+      indexHTML = T.unpack $ substitute indexT (withSiteMeta $ toJSON indexInfo)
+  writeFile' (outputFolder </> "blog.html") indexHTML
 
 -- | Find and build all posts
 buildPosts :: Action [Post]
@@ -130,7 +116,7 @@ buildPosts = do
   forP pPaths buildPost
 
 -- | Find and build all projects
-buildProjects :: Action [Project]
+buildProjects :: Action [Post]
 buildProjects = do
   pPaths <- getDirectoryFiles "." ["site/projects//*.md"]
   forP pPaths buildProject
@@ -147,17 +133,18 @@ buildPost srcPath = cacheAction ("build" :: T.Text, srcPath) $ do
       withPostUrl = _Object . at "url" ?~ String postUrl
   -- Add additional metadata we've been able to compute
   let fullPostData = withSiteMeta . withPostUrl $ postData
-  template <- compileTemplate' "site/templates/post.html"
+  template <- compileTemplate' "site/templates/post-boiler.html"
   writeFile' (outputFolder </> T.unpack postUrl) . T.unpack $ substitute template fullPostData
   convert fullPostData
 
--- | Load a project, process metadata, write it to output, then return the 
--- project object. Detects changes to either project content or template.
-buildProject :: FilePath -> Action Project
-buildProject srcPath = cacheAction ("build" :: T.Text, srcPath) $ do 
+-- | Load a project, process metadata, write it to output, 
+-- then return the project object
+-- Detects changes to either post content or template
+buildProject :: FilePath -> Action Post
+buildProject srcPath = cacheAction ("build" :: T.Text, srcPath) $ do
   liftIO . putStrLn $ "Rebuilding project: " <> srcPath
   projContent <- readFile' srcPath
-  -- load post content and metadata as JSON blob
+  -- load project content and metadata as JSON blob
   projData <- markdownToHTML . T.pack $ projContent
   let projUrl = T.pack . dropDirectory1 $ srcPath -<.> "html"
       withProjUrl = _Object . at "url" ?~ String projUrl
@@ -202,7 +189,7 @@ buildFeed posts' = do
   writeFile' (outputFolder </> "atom.xml") . T.unpack $ substitute atomTempl (toJSON atomData)
     where
       mkAtomPost :: Post -> Post
-      mkAtomPost p = p { postDate = formatDate $ postDate p }
+      mkAtomPost p = p { date = formatDate $ date p }
 
 -- | Specific build rules for the Shake system
 --   defines workflow to build the website
@@ -210,8 +197,9 @@ buildRules :: Action ()
 buildRules = do
   allPosts <- buildPosts
   allProjects <- buildProjects
-  buildIndex allPosts
+  buildIndex
   buildProjectIndex allProjects
+  buildPostsIndex allPosts
   buildFeed allPosts
   copyStaticFiles
 
