@@ -25,3 +25,28 @@
   <!-- Probably don't put content here... -->
 </div>
 </div>
+
+<!-- Firebase CDN -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyA0ZbI58_GlAFpVs91bivA1tJkAjzyP8XU",
+    authDomain: "academic-soup.firebaseapp.com",
+    projectId: "academic-soup",
+    storageBucket: "academic-soup.appspot.com",
+    messagingSenderId: "883119798482",
+    appId: "1:883119798482:web:1033d8d0ecd79f75cdd50b",
+    measurementId: "G-Y3045T8PS8"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
