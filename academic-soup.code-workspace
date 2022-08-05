@@ -13,7 +13,9 @@
 			"dawhite.mustache",
 			"jock.svg",
 			"redhat.vscode-xml",
-			"redhat.vscode-yaml"
+			"redhat.vscode-yaml",
+			"justusadam.language-haskell",
+			"hoovercj.haskell-linter"
 		]
 	}
 }
