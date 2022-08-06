@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Stack project",
+            "type": "shell",
+            "command": "sh ./.vscode/scripts/build-stack.sh",
+            "windows": {
+                "command": "echo No build script for Windows available yet :("
+            },
+            "group": "build"
+        }
+    ]
+}
