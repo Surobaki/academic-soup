@@ -14,7 +14,10 @@
             "label": "Deploy Firebase project",
             "type": "shell",
             "command": "firebase deploy",
-            "group": "build"
+            "group": "build",
+            "dependsOn": [
+                "Build Stack project"
+            ]
         }
     ]
 }
