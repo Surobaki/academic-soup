@@ -9,6 +9,12 @@
                 "command": "echo No build script for Windows available yet :("
             },
             "group": "build"
+        },
+        {
+            "label": "Deploy Firebase project",
+            "type": "shell",
+            "command": "firebase deploy",
+            "group": "build"
         }
     ]
 }
