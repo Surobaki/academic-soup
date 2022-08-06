@@ -8,7 +8,7 @@
     {{>site/templates/header.html}}
     <div id="content-flex">
       <div id="body-content">
-        <h2 id="projects-heading">Interesting projects</h2>
+        <h2 class="entries-heading">Interesting projects</h2>
         <div id="project-box">
           {{#projects}}
             <a href="{{url}}" class="project-item">
@@ -18,7 +18,7 @@
                 <p class="project-description">
                   {{description}}
                 </p>
-                <span class="date-span">{{projectDate}}</span>
+                <span class="date-span">{{date}}</span>
                 <div class="tag-list">
                   {{#tags}}
                   <span class="tag-span">{{.}}</span>

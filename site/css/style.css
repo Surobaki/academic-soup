@@ -203,7 +203,7 @@ figcaption {
     max-height: 200px;
 }
 
-#projects-heading {
+.entries-heading {
     width: 100%;
     text-align: center;
 }
@@ -232,4 +232,46 @@ figcaption {
 
 .project-description, .date-span {
     font-weight: 400;
+}
+
+#posts-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.post-item {
+    width: 80%;
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--button-1);
+    box-shadow: var(--button-text-1) 5px 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.post-main {
+    display: inherit;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.post-meta {
+    display: inherit;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-description {
+    font-weight: normal;
+}
+
+.posts-img {
+    
 }

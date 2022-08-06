@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>site/templates/head-metas.html}}
+
+<body>
+  <div id="main-wrapper">
+    {{>site/templates/header.html}}
+    <div id="content-flex">
+      <div id="body-content">
+        <h2 class="entries-heading">News from my life</h2>
+        <div id="posts-box">
+          {{#posts}}
+          <a href="{{url}}" class="post-item">
+            <div class="post-main">
+              <h3>{{title}}</h3>
+              <p class="post-description">
+                {{description}}
+              </p>
+            </div>
+            <div class="post-meta">
+              <span class="date-span">{{date}}</span>
+              <div class="tag-list">
+                {{#tags}}
+                <span class="tag-span">{{.}}</span>
+                {{/tags}}
+              </div>
+            </div>
+          </a>
+          {{/posts}}
+        </div>
+      </div>
+      {{>site/templates/intralinks.html}}
+    </div>
+
+  </div>
+  {{>site/templates/footer.html}}
+</body>
+
+</html>
