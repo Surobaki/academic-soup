@@ -5,12 +5,12 @@ Academic Soup is the name of my personal website. It's built from a template usi
 * not taking the project (or yourself) too seriously.
 
 # Roadmap
-_Last update: \[2022-07-25\]_
+_Last update: \[2022-08-06]_
 * [x] Start playing around with my tech stack
 * [x] Create an acceptable design prototype in HTML/CSS
-* [ ] Finish creation of HTML/CSS/JS frontend with [Mustache](https://mustache.github.io/) templating
+* [x] Finish creation of HTML/CSS/JS frontend with [Mustache](https://mustache.github.io/) templating
 * [ ] Write content for website
-* [ ] Set up functional blogging with Slick
+* [x] Set up functional blogging with Slick
 
 # FAQ
 _Question 1._
