@@ -1,12 +1,11 @@
 ---
-title: Teaching Assistance (Swansea University)
-author: Olivia Weston
-date: "August 2nd 2022"
-projectDate: "August 2nd 2022"
+title: "Teaching Assistance (Swansea University)"
+author: "Olivia Weston"
+date: Aug 2, 2022
 image: "/images/swansea-ta/book.jpg"
-description: "Chronicles of my work as a teaching assistant at Swansea University."
+description: Chronicles of my work as a teaching assistant at Swansea University.
 tags: [computer-science, teaching]
-altText: "Photograph of a book held in front of one's vision with a nature landscape background"
+altText: Photograph of a book held in front of one's vision with a nature landscape background
 ---
 
 ## CS-275: Automata and Formal Language Theory
