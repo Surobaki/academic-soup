@@ -5,7 +5,38 @@
 		}
 	],
 	"settings": {
-		"svg.preview.background": "transparent"
+		"svg.preview.background": "transparent",
+		"terminal.integrated.profiles.linux": {
+			"Server": {
+				"path": "fish",
+				"args": [
+					"./.vscode/scripts/start_emulator.fish",
+					"-i"
+				],
+				"icon": "server",
+				"color": "terminal.ansiRed",
+				"overrideName": true
+			},
+			"bash": {
+				"path": "bash",
+				"icon": "terminal-bash"
+			},
+			"zsh": {
+				"path": "zsh"
+			},
+			"fish": {
+				"path": "fish"
+			},
+			"tmux": {
+				"path": "tmux",
+				"icon": "terminal-tmux"
+			},
+			"pwsh": {
+				"path": "pwsh",
+				"icon": "terminal-powershell"
+			}
+		},
+		"terminal.integrated.scrollback": 5000
 	},
 	"extensions": {
 		"recommendations": [
