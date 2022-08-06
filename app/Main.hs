@@ -26,7 +26,7 @@ import qualified Data.Text                  as T
 siteMeta :: SiteMeta
 siteMeta =
     SiteMeta { siteAuthor = "Olivia Weston"
-             , baseUrl = "https://example.com"
+             , baseUrl = "https://academic-soup.web.app/"
              , siteTitle = "Olivia Weston, academic soup"
              , twitterHandle = Just "suro_baki"
              , githubUser = Just "Surobaki"
@@ -118,7 +118,7 @@ buildPosts = do
 -- | Find and build all projects
 buildProjects :: Action [Post]
 buildProjects = do
-  pPaths <- getDirectoryFiles "." ["site/projects//*.md"]
+  pPaths <- getDirectoryFiles "." ["/site/projects//*.md"]
   forP pPaths buildProject
 
 -- | Load a post, process metadata, write it to output, then return the post object
