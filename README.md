@@ -25,6 +25,14 @@ I'm going through a phase of interest and hyperfixation on [Haskell](https://www
 
 # Sourcing
 The images for Twitter and Github are downloaded from the respective brand guidelines.  
+
+
 My PGP icon is taken from [ModernPGP/icons](https://github.com/ModernPGP/icons) ([/keys/icon-key.svg](https://github.com/ModernPGP/icons/blob/master/keys/icon-key.svg)).
+
+
 My ProtonMail icon is taken from [Simple Icons](https://simpleicons.org/).
-My LinkedIn icon is taken from [iconAPE](https://iconape.com/logo-linkedin-logo-icon-svg-png.html) because I couldn't find a black LinkedIn logo from official sources.
+
+
+My LinkedIn icon is taken from [iconAPE](https://iconape.com/logo-linkedin-logo-icon-svg-png.html), I couldn't find a black LinkedIn logo from official sources.
+
+Asset sources per-post on the website can be found in each post.
