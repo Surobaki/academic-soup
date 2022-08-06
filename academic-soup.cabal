@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           academic-soup
-version:        0.1.0.0
+version:        0.1.1.0
 synopsis:       My personal website built using Slick.
 description:    Quite static multi-page website built on top of the Slick static site generator and deployed on Firebase.
 category:       Slick-Site
