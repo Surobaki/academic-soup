@@ -1,7 +1,12 @@
 .stack-work/
 *~
 .shake
+
+# Public files
 docs/
+
+# External library dependencies
+deps/
 
 # Firebase files
 firebase-debug.log
